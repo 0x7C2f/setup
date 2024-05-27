@@ -1,4 +1,4 @@
-[defaults]
+[localhost]
 localhost_warning=False
 
 [inventory]
