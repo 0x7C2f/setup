@@ -1,5 +1,5 @@
 ---
-- hosts: desktop.local
+- hosts: all
   connection: local
   become: true
 
