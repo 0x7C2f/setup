@@ -9,9 +9,9 @@
 - name: Enable cronie service
   service:
     name: cronie
-    enabled: no
+    enabled: yes
 
 - name: Start cronie service
   service:
     name: cronie
-    state: stopped
+    state: started
