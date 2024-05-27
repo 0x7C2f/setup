@@ -3,6 +3,7 @@
   user:
     name: ansible
     system: yes
+
 - name: Set Ansible as sudo
   copy:
     src: files/sudoer_ansible
