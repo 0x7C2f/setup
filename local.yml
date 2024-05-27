@@ -4,14 +4,28 @@
   become: true
 
   tasks:
-##############################################
+############
+# PACKAGES #
+############
   - name: install packages
     package:
       name:
+        - git
         - cronie
         - btop
         - firefox
-##############################################
+############
+# Dotfiles #
+############
+  - name: copy .zshrc
+    copy:
+      src: files/zshrc
+      dest: /home/mrgrim/.zshrc
+      owner: mrgrim
+      group: mrgrim
+########################
+# Ansible Syncing Core #
+########################
   - name: Creating Ansible User
     user:
       name: ansible
