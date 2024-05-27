@@ -5,3 +5,13 @@
     user: ansible
     minute: "*/10"
     job: ansible-pull -o -U git@github.com:0x7C2f/configuration.git
+    
+- name: Enable cronie service
+  service:
+    name: cronie
+    enabled: yes
+
+- name: Start cronie service
+  service:
+    name: cronie
+    state: started
