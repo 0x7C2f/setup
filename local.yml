@@ -8,7 +8,7 @@
   - name: install packages
     package:
       name:
-        - crontab
+        - cronie
         - btop
         - firefox
 ##############################################
