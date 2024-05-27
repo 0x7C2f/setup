@@ -23,9 +23,9 @@
       owner: root
       group: root
       mode: 0440
-#  - name: Add ansible-pull cron job
-#    cron:
-#      name: ansible auto-provision
-#      user: ansible
-#      minute: "*/10"
-#      job: ansible-pull -o -U git clone git@github.com:0x7C2f/configuration.git
+  - name: Add ansible-pull cron job
+    cron:
+      name: ansible auto-provision
+      user: ansible
+      minute: "*/10"
+      job: ansible-pull -o -U git clone git@github.com:0x7C2f/configuration.git
