@@ -1,0 +1,13 @@
+---
+  - name: copy .zshrc
+    copy:
+      src: files/zshrc
+      dest: /home/mrgrim/.zshrc
+      owner: mrgrim
+      group: mrgrim
+  - name: copy .xinitrc
+    copy:
+      src: files/xinitrc
+      dest: /home/mrgrim/.xinitrc
+      owner: mrgrim
+      group: mrgrim

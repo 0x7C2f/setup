@@ -1,0 +1,8 @@
+---
+- name: Install packages
+  package:
+    name:
+      - git
+      - cronie
+      - btop
+      - firefox
