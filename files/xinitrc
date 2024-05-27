@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Set the background wallpaper randomly from ~/.wallpapers folder
+feh --no-fehbg --randomize --bg-fill .wallpapers
+
+# Start the i3 window manager
+exec i3
