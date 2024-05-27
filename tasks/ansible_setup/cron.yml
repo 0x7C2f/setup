@@ -14,4 +14,4 @@
 - name: Start cronie service
   service:
     name: cronie
-    state: stopped
+    state: started
