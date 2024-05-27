@@ -1,7 +1,6 @@
 ---
 - hosts: all
   connection: local
-  become: true
 
 # COMMON
   tasks:
@@ -16,5 +15,7 @@
       import_tasks: tasks/ansible_setup/cron.yml
 
 # MAIN LOGIC
+    - name: backup pacman
+      import_tasks: tasks/backup_pacman.yml
     - name: Copy dotfiles to user's home directory
       import_tasks: tasks/copy_dotfiles.yml
