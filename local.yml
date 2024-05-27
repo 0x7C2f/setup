@@ -1,7 +1,8 @@
 ---
-- hosts: desktop
-  connection: local
-  become: true
+hosts:
+  localhost:
+   vars:
+     ansible_connection: local
 
   tasks:
   - name: install packages
