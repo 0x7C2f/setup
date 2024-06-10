@@ -1,0 +1,5 @@
+---
+- name: Test dunst role
+  hosts: localhost
+  roles:
+    - dunst

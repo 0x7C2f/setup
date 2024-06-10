@@ -1,0 +1,5 @@
+---
+- name: Test i3 role
+  hosts: localhost
+  roles:
+    - i3

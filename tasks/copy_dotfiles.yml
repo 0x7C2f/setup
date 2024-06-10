@@ -17,12 +17,6 @@
 #
 # FOLDERS
 #
-  - name: i3 Configuration
-    copy:
-      src: files/i3/
-      dest: /home/mrgrim/.config/i3/
-      owner: mrgrim
-      group: mrgrim
   - name: Polybar Configuration
     copy:
       src: files/polybar/

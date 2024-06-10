@@ -1,0 +1,19 @@
+---
+- name: Install dunst
+  pacman:
+    name: "{{ dunst_package_name }}"
+    state: present
+  become: yes
+
+- name: Create dunst config directory
+  file:
+    path: "{{ dunst_config_path | dirname }}"
+    state: directory
+    mode: '0755'
+
+- name: Deploy dunst configuration
+  copy:
+    src: dunstrc
+    dest: "{{ dunst_config_path }}"
+  notify:
+    - restart dunst

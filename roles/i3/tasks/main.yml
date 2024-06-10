@@ -1,0 +1,19 @@
+---
+- name: Install i3
+  pacman:
+    name: "{{ i3_package_name }}"
+    state: present
+  become: yes
+
+- name: Create i3 config directory
+  file:
+    path: "{{ i3_config_path | dirname }}"
+    state: directory
+    mode: '0755'
+
+- name: Deploy i3 configuration
+  copy:
+    src: config
+    dest: "{{ i3_config_path }}"
+  notify:
+    - restart i3

@@ -1,0 +1,4 @@
+---
+- name: restart i3
+  command: i3-msg restart
+  when: ansible_env.SHLVL == 2  # Ensures the command is run within an X session

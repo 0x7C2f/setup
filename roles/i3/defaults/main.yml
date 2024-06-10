@@ -1,0 +1,4 @@
+---
+# defaults file for roles/i3
+i3_package_name: i3-wm
+i3_config_path: ~/.config/i3/config
