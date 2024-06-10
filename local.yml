@@ -3,6 +3,7 @@
   connection: local
   become: true
   roles:
+    - systemd
     - ansible_user
     - cron
     - i3

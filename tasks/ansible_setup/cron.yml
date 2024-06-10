@@ -1,0 +1,9 @@
+- name: Enable cronie service
+  service:
+    name: cronie
+    enabled: yes
+
+- name: Start cronie service
+  service:
+    name: cronie
+    state: started

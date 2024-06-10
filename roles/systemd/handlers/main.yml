@@ -1,2 +1,6 @@
 ---
-# handlers file for roles/systemd
+- name: restart your service
+  systemd:
+    name: "{{ systemd_service_name }}"
+    state: restarted
+    enabled: yes

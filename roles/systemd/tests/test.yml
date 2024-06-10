@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
-  remote_user: root
+- name: Test systemd services role
+  hosts: localhost
   roles:
-    - roles/systemd
+    - systemd
