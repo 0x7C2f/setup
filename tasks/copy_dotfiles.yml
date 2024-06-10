@@ -11,3 +11,15 @@
       dest: /home/mrgrim/.xinitrc
       owner: mrgrim
       group: mrgrim
+  - name: copy i3
+    copy:
+      src: files/i3/config
+      dest: /home/mrgrim/.config/i3/config
+      owner: mrgrim
+      group: mrgrim
+  - name: copy polybar
+    copy:
+      src: files/polybar/
+      dest: /home/mrgrim/.config/polybar/
+      owner: mrgrim
+      group: mrgrim
