@@ -14,12 +14,3 @@
       dest: /home/mrgrim/.xinitrc
       owner: mrgrim
       group: mrgrim
-#
-# FOLDERS
-#
-  - name: Polybar Configuration
-    copy:
-      src: files/polybar/
-      dest: /home/mrgrim/.config/polybar/
-      owner: mrgrim
-      group: mrgrim
