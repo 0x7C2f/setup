@@ -1,0 +1,160 @@
+rules:
+  - locations:
+    - path:
+      - ~/Desktop
+      - ~/Downloads
+      - ~/Documents
+      exclude_dirs: 
+        - ~/Documents/PDFs/
+    subfolders: true
+    filters:
+      - extension: pdf
+    actions:
+      - move:
+          dest: ~/Documents/PDFs/
+          on_conflict: overwrite
+          rename_template: "{name}-{counter}{extension}"
+#########################################
+#                                       #
+#########################################
+  - name: "Find Music"
+    enabled: false
+    locations:
+    - path:
+      - ~/Desktop
+      - ~/Downloads
+      - ~/Documents
+      exclude_dirs: "~/Music/"
+    subfolders: true
+    filters:
+      - extension: mp3
+    actions:
+      - move: 
+          dest: "~/Music/"
+          on_conflict: overwrite
+#########################################
+#                                       #
+#########################################
+  - name: "Find Images"
+    enabled: false
+    locations:
+    - path:
+      - ~/Desktop
+      - ~/Downloads
+      - ~/Documents
+      exclude_dirs: "~/Pictures/"
+    subfolders: true
+    filters:
+      extension:
+        - png
+        - jpg
+        - jpeg
+        - webp
+        - ico
+    actions:
+      - move:
+          dest: "~/Pictures/"
+          on_conflict: overwrite
+#########################################
+#                                       #
+#########################################
+  - name: "Find Videos"
+    enabled: false
+    locations:
+    - path:
+      - ~/Desktop
+      - ~/Downloads
+      - ~/Documents
+      exclude_dirs: "~/Videos/"
+    subfolders: true
+    filters:
+      extension:
+        - mov
+        - mp4
+        - webm
+        - gif
+        - mkv
+    actions:
+      - move:
+          dest: "~/Videos/"
+          on_conflict: overwrite
+#########################################
+#                                       #
+#########################################
+  - name: "Find Shell Scripts"
+    enabled: false
+    locations:
+    - path:
+      - ~/Desktop
+      - ~/Downloads
+      - ~/Documents
+      exclude_dirs: "~/Documents/Scripts/Linux/Shell"
+    subfolders: true
+    filters:
+      extension: sh
+    actions:
+      - move:
+          dest: "~/Documents/Scripts/Linux/Shell"
+          on_conflict: overwrite
+#########################################
+#                                       #
+#########################################
+  - name: "Find Powershell Scripts"
+    enabled: false
+    locations:
+      - ~/Desktop
+      - ~/Downloads
+      - ~/Documents
+    subfolders: true
+    filters:
+      extension: ps1
+    actions:
+      - move:
+          dest: "~/Documents/Scripts/Windows/Powershell"
+          on_conflict: overwrite
+#########################################
+#                                       #
+#########################################
+  - name: "Find Batch Scripts"
+    enabled: false
+    locations:
+      - ~/Desktop
+      - ~/Downloads
+      - ~/Documents
+    subfolders: true
+    filters:
+      extension: bat
+    actions:
+      - move:
+          dest: "~/Documents/Scripts/Windows/Batch"
+          on_conflict: overwrite
+#########################################
+#                                       #
+#########################################
+  - name: "Recursively delete all empty directories"
+    enabled: false
+    locations:
+      - ~/Desktop
+      - ~/Downloads
+      - ~/Documents
+    targets: dirs
+    subfolders: true
+    filters:
+      - empty
+    actions:
+      - delete
+#########################################
+#                                       #
+#########################################
+  - name: Show all duplicate files in your desktop and download folder (and their subfolders)
+    enabled: false
+    locations:
+      - ~/Desktop
+      - ~/Downloads
+      - ~/Documents
+    subfolders: true
+    filters:
+      - duplicate
+    actions:
+      - echo: "{path} is a duplicate of {duplicate.original}"
+

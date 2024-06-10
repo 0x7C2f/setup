@@ -1,0 +1,5 @@
+[user]
+    name = ${GITHUB_USERNAME}
+    email = ${GITHUB_USERNAME}@grimdevelopment.com
+[core]
+    editor = nano
