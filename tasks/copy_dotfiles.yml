@@ -1,4 +1,7 @@
 ---
+#
+# DOTFILES
+# 
   - name: copy .zshrc
     copy:
       src: files/zshrc
@@ -11,13 +14,16 @@
       dest: /home/mrgrim/.xinitrc
       owner: mrgrim
       group: mrgrim
-  - name: copy i3
+#
+# FOLDERS
+#
+  - name: i3 Configuration
     copy:
       src: files/i3/
       dest: /home/mrgrim/.config/i3/
       owner: mrgrim
       group: mrgrim
-  - name: copy polybar
+  - name: Polybar Configuration
     copy:
       src: files/polybar/
       dest: /home/mrgrim/.config/polybar/
