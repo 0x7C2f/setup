@@ -1,0 +1,5 @@
+---
+- name: Test ansible_user role
+  hosts: localhost
+  roles:
+    - ansible_user

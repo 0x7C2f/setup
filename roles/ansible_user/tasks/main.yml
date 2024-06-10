@@ -6,8 +6,9 @@
 
 - name: Set Ansible as sudo
   copy:
-    src: files/sudoer_ansible
+    src: sudoer_ansible
     dest: /etc/sudoers.d/ansible
     owner: root
     group: root
-    mode: 0440
+    mode: '0440'
+  notify: restart sudo

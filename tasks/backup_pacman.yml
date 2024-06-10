@@ -1,8 +1,0 @@
----
-- name: Backup /etc/pacman.conf
-  copy:
-    src: /etc/pacman.conf
-    dest: files/pacman.conf
-    owner: root
-    group: root
-    mode: '0644'

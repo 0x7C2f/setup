@@ -1,0 +1,4 @@
+---
+systemd_service_name: your_service
+systemd_service_state: started
+systemd_service_enabled: yes
