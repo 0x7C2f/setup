@@ -13,8 +13,8 @@
       group: mrgrim
   - name: copy i3
     copy:
-      src: files/i3/config
-      dest: /home/mrgrim/.config/i3/config
+      src: files/i3/
+      dest: /home/mrgrim/.config/i3/
       owner: mrgrim
       group: mrgrim
   - name: copy polybar
