@@ -38,7 +38,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec xset r rate 200 40
 exec_always --no-startup-id autEotiling
-exec_always --no-startup-id /etc/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh --hack
 
 font pango:monospace 8
 

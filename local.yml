@@ -2,7 +2,11 @@
 - hosts: all
   connection: local
   become: true
+  vars:
+    HOME: /home/mrgrim
   roles:
+    - ssh
+    - chezmoi
     - systemd
     - ansible_user
     - cron
