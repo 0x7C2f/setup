@@ -16,7 +16,7 @@
     src: config.ini
     dest: "{{ polybar_config_path }}"
 
-- name: Deploy polybar launch script
-  copy:
-    src: launch.sh
-    dest: "{{ polybar_config_path }}"
+#- name: Deploy polybar launch script
+#  copy:
+#    src: launch.sh
+#    dest: "{{ polybar_config_path }}"
