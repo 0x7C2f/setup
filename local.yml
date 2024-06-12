@@ -4,10 +4,25 @@
   become: true
   vars:
     HOME: /home/mrgrim
-  roles:
-    - systemd
-    - ansible_user
-    - cron
-    - i3
-    - dunst
-    - polybar
+  tasks:
+    - name: Full system upgrade
+      community.general.pacman:
+        update_cache: true
+        upgrade: true
+    - name: Install Software
+      community.general.pacman:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - git
+        - firefox
+        - dunst
+        - alacritty
+        - polybar
+#  roles:
+#    - systemd
+#    - ansible_user
+#    - cron
+#    - i3
+#    - dunst
+#    - polybar
