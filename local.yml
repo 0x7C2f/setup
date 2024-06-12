@@ -16,6 +16,19 @@
       loop:
         - git
         - firefox
+        - zsh
+        - rofi
+        - feh
+        - amberol
+        - steam
+        - sddm
+        - telegram-desktop
+        - autotiling
+        - bitwarden
+        - signal-desktop
+        - thunderbird
+        - syncthing
+        - btop
         - cronie
         - dunst
         - alacritty
