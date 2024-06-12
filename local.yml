@@ -2,8 +2,6 @@
 - hosts: all
   connection: local
   become: true
-  vars:
-    HOME: /home/mrgrim
   roles:
     - systemd
     - ansible_user

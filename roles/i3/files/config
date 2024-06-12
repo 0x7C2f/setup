@@ -37,9 +37,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec xset r rate 200 40
-exec_always feh --bg-fill ~/.wallpapers/ --bg-fill ~/.wallpapers/
 exec_always --no-startup-id autEotiling
-
+exec_always --no-startup-id /etc/polybar/launch.sh
 
 font pango:monospace 8
 
@@ -109,6 +108,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-bar {
-        status_command i3status
-}
+#bar {
+##        status_command i3status
+#}
