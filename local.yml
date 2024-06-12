@@ -15,24 +15,24 @@
         state: present
       loop:
         - git
-        - firefox
-        - zsh
-        - rofi
-        - feh
-        - amberol
-        - steam
         - sddm
-        - telegram-desktop
-        - autotiling
+        - zsh
+        - cronie
+        - syncthing
+        - firefox
+        - alacritty
+        - thunderbird
+        - btop
         - bitwarden
         - signal-desktop
-        - thunderbird
-        - syncthing
-        - btop
-        - cronie
+        - telegram-desktop
+        - rofi
+        - feh
         - dunst
-        - alacritty
         - polybar
+        - autotiling
+        - steam
+        - amberol
 #  roles:
 #    - systemd
 #    - ansible_user
