@@ -15,5 +15,7 @@
   copy:
     src: config
     dest: "{{ i3_config_path }}"
+    owner: mrgrim
+    group: mrgrim
   notify:
     - restart i3

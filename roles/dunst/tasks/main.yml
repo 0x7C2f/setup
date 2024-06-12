@@ -15,5 +15,7 @@
   copy:
     src: dunstrc
     dest: "{{ dunst_config_path }}"
+    owner: mrgrim
+    group: mrgrim
   notify:
     - restart dunst

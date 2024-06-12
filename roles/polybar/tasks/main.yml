@@ -15,8 +15,12 @@
   copy:
     src: config.ini
     dest: "{{ polybar_config_path }}"
+    owner: mrgrim
+    group: mrgrim
 
 - name: Deploy polybar launch script
   copy:
     src: launch.sh
     dest: "{{ polybar_config_path }}"
+    owner: mrgrim
+    group: mrgrim
