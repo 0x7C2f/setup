@@ -4,6 +4,13 @@
   become: true
   vars:
     HOME: /home/mrgrim
+  roles:
+    - ansible_user
+    - systemd
+    - cron
+    - i3
+    - dunst
+    - polybar
   tasks:
     - name: Full system upgrade
       community.general.pacman:
@@ -28,15 +35,6 @@
         - telegram-desktop
         - rofi
         - feh
-        - dunst
-        - polybar
         - autotiling
         - steam
         - amberol
-#  roles:
-#    - systemd
-#    - ansible_user
-#    - cron
-#    - i3
-#    - dunst
-#    - polybar
