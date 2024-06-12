@@ -16,6 +16,7 @@
       loop:
         - git
         - firefox
+        - cronie
         - dunst
         - alacritty
         - polybar
