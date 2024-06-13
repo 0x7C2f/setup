@@ -13,10 +13,6 @@
     - dunst
     - polybar
   tasks:
-    - name: Full system upgrade
-      community.general.pacman:
-        update_cache: true
-        upgrade: true
     - name: Install Software
       community.general.pacman:
         name: "{{ item }}"
