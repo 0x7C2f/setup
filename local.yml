@@ -5,6 +5,7 @@
   vars:
     HOME: /home/mrgrim
   roles:
+    - pacman
     - ansible_user
     - systemd
     - cron
@@ -38,3 +39,4 @@
         - autotiling
         - steam
         - amberol
+        - mpv

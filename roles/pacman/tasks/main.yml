@@ -1,0 +1,6 @@
+---
+- name: Ensure pacman.conf is configured
+  template:
+    src: pacman.conf.j2
+    dest: /etc/pacman.conf
+  notify: Restart pacman
