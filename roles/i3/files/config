@@ -36,6 +36,7 @@ set $ws10 "10"
 exec --no-startup-id nm-applet
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id feh --no-fehbg --randomize --bg-fill ~/.wallpapers
 exec xset r rate 200 40
 exec_always --no-startup-id autEotiling
 exec_always --no-startup-id ~/.config/polybar/launch.sh --hack
