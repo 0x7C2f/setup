@@ -21,7 +21,7 @@
       loop:
         - git
         - gst-libav
-        - honon-qt5-gstreamer
+        - phonon-qt5-gstreamer
         - gst-plugins-good
         - qt5-quickcontrols
         - qt5-graphicaleffects
