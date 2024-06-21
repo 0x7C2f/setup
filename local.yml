@@ -5,6 +5,7 @@
   vars:
     HOME: /home/mrgrim
   roles:
+    - sddm
     - pacman
     - ansible_user
     - systemd
@@ -19,7 +20,6 @@
         state: present
       loop:
         - git
-        - sddm
         - gst-libav
         - honon-qt5-gstreamer
         - gst-plugins-good
