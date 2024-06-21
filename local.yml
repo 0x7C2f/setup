@@ -20,6 +20,12 @@
       loop:
         - git
         - sddm
+        - gst-libav
+        - honon-qt5-gstreamer
+        - gst-plugins-good
+        - qt5-quickcontrols
+        - qt5-graphicaleffects
+        - qt5-multimedia
         - zsh
         - cronie
         - syncthing
