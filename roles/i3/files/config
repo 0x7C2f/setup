@@ -13,6 +13,7 @@ for_window [class="Vesktop"] floating enable, move position center
 for_window [class="steam"] floating enable, move position center
 for_window [class="signal"] floating enable, resize set 800 600, move position center
 for_window [class="Alacritty"] floating enable, resize set 800 600, move position center
+for_window [class="battle.net.exe"] floating enable, resize set 800 600, move position center
 for_window [class="7zFM"] floating enable, resize set 800 600
 for_window [class="^.*"] border pixel 1
 
