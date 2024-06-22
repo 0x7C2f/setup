@@ -13,12 +13,18 @@
     - i3
     - dunst
   tasks:
+    - name: Install Common
+      community.general.pacman:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - base-devel
+        - curl
     - name: Install Software
       community.general.pacman:
         name: "{{ item }}"
         state: present
       loop:
-        - git
         - gst-libav
         - phonon-qt5-gstreamer
         - gst-plugins-good

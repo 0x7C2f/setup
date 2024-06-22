@@ -1,0 +1,2 @@
+ansible_user: mrgrim
+ansible_os_family: Archlinux
