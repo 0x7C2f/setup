@@ -2,7 +2,7 @@
 cron_package_name: cronie
 cron_jobs:
   - name: "ansible-pull"
-    minute: "0"
+    minute: "*/10"
     hour: "*"
     day: "*"
     month: "*"
