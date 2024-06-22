@@ -12,7 +12,6 @@
     - cron
     - i3
     - dunst
-    - polybar
   tasks:
     - name: Install Software
       community.general.pacman:
