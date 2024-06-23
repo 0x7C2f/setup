@@ -1,3 +1,0 @@
----
-dunst_package_name: dunst
-dunst_config_path: "{{ HOME }}/.config/dunst/dunstrc"

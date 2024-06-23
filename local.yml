@@ -12,6 +12,8 @@
     - cron
     - i3
     - dunst
+    - alacritty
+    - feh
   tasks:
     - name: Install Common
       community.general.pacman:
@@ -42,7 +44,6 @@
         - signal-desktop
         - telegram-desktop
         - rofi
-        - feh
         - autotiling
         - steam
         - amberol
