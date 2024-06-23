@@ -5,7 +5,7 @@
     extra_args: --noconfirm --needed
 - name: Setting up Alacritty config file
   template:
-    dest: $HOME/.config/alacritty/alacritty.yml
+    dest: /home/mrgrim/.config/alacritty/alacritty.yml
     src: alacritty.j2
     owner: mrgrim
     group: mrgrim
