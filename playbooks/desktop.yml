@@ -20,6 +20,8 @@
     - feh
     - firefox
     - thunar
+    - ruby
+    - python
 
   tasks:
     - name: Install Common packages
@@ -53,3 +55,4 @@
         - steam
         - amberol
         - mpv
+
