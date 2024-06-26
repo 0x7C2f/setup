@@ -19,6 +19,7 @@
     - alacritty
     - feh
     - firefox
+    - thunar
 
   tasks:
     - name: Install Common packages
