@@ -46,3 +46,4 @@
         - steam
         - amberol
         - mpv
+      when: ansible_os_family == 'Archlinux'
