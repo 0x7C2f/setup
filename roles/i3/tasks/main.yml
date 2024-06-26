@@ -1,21 +1,11 @@
 ---
 - name: Install i3
   pacman:
-    name: "{{ i3_package_name }}"
+    name: i3-wm
     state: present
   become: yes
 
-- name: Create i3 config directory
-  file:
-    path: "{{ i3_config_path | dirname }}"
-    state: directory
-    mode: '0755'
-
 - name: Deploy i3 configuration
-  copy:
-    src: config
-    dest: "{{ i3_config_path }}"
-    owner: mrgrim
-    group: mrgrim
-  notify:
-    - restart i3
+  template:
+    dest: "{{home_directory}}/.config/i3/config"
+    src: config.j2
