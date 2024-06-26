@@ -1,7 +1,7 @@
 ---
 - name: Install polybar
   pacman:
-    name: "polybar]"
+    name: "polybar"
     state: present
   become: yes
 
@@ -12,15 +12,16 @@
     mode: '0755'
 
 - name: Deploy polybar configuration
-  copy:
-    src: config.ini
-    dest: "{{ home_directory }}/.config/polybar"
+  template:
+    dest: "{{ home_directory }}/.config/polybar/config.ini"
+    src: config.j2
     owner: mrgrim
     group: mrgrim
 
-- name: Deploy polybar launch script
-  copy:
-    src: launch.sh
-    dest: "{{ home_directory }}/.config/polybar"
+- name: Deploy polybar configuration
+  template:
+    dest: "{{ home_directory }}/.config/polybar/launch.sh"
+    src: launch.j2
     owner: mrgrim
     group: mrgrim
+    mode: a+x

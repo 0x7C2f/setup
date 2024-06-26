@@ -22,7 +22,8 @@
     - thunar
     - ruby
     - python
-
+    - polybar
+    
   tasks:
     - name: Install Common packages
       community.general.pacman:
