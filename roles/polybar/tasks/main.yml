@@ -1,26 +1,26 @@
 ---
 - name: Install polybar
   pacman:
-    name: "{{ polybar_package_name }}"
+    name: "polybar]"
     state: present
   become: yes
 
 - name: Create polybar config directory
   file:
-    path: "{{ polybar_config_path | dirname }}"
+    path: "{{ home_directory }}/.config/polybar"
     state: directory
     mode: '0755'
 
 - name: Deploy polybar configuration
   copy:
     src: config.ini
-    dest: "{{ polybar_config_path }}"
+    dest: "{{ home_directory }}/.config/polybar"
     owner: mrgrim
     group: mrgrim
 
 - name: Deploy polybar launch script
   copy:
     src: launch.sh
-    dest: "{{ polybar_config_path }}"
+    dest: "{{ home_directory }}/.config/polybar"
     owner: mrgrim
     group: mrgrim
