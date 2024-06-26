@@ -2,48 +2,8 @@
 - hosts: all
   connection: local
   become: true
-  roles:
-    - bin
-    - bash
-    - sddm
-    - pacman
-    - ansible_user
-    - systemd
-    - cron
-    - i3
-    - dunst
-    - alacritty
-    - feh
-  tasks:
-    - name: Install Common
-      community.general.pacman:
-        name: "{{ item }}"
-        state: present
-      loop:
-        - base-devel
-        - curl
-    - name: Install Software
-      community.general.pacman:
-        name: "{{ item }}"
-        state: present
-      loop:
-        - gst-libav
-        - ttf-firacode-nerd
-        - phonon-qt5-gstreamer
-        - gst-plugins-good
-        - qt5-quickcontrols
-        - qt5-graphicaleffects
-        - qt5-multimedia
-        - syncthing
-        - firefox
-        - thunderbird
-        - btop
-        - bitwarden
-        - signal-desktop
-        - telegram-desktop
-        - rofi
-        - autotiling
-        - steam
-        - amberol
-        - mpv
-      when: ansible_os_family == 'Archlinux'
+
+- name: Include desktop.yml playbook with roles
+  import_playbook: desktop.yml
+  when: ansible_os_family == 'Archlinux'
+
