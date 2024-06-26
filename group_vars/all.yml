@@ -1,2 +1,3 @@
 ansible_user: mrgrim
+home_directory: /home/mrgrim
 ansible_os_family: Archlinux

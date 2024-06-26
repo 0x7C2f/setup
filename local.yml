@@ -2,8 +2,6 @@
 - hosts: all
   connection: local
   become: true
-  vars:
-    HOME: /home/mrgrim
   roles:
     - bin
     - bash
@@ -36,7 +34,6 @@
         - qt5-quickcontrols
         - qt5-graphicaleffects
         - qt5-multimedia
-        - zsh
         - cronie
         - syncthing
         - firefox

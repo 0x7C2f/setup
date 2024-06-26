@@ -1,5 +1,5 @@
 #
-# /home/mrgrim/.nvidia-settings-rc
+# {{ home_directory }}/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA Settings utility
 # Generated on Wed Jun 22 09:53:45 2022

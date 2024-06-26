@@ -5,5 +5,5 @@
     extra_args: --noconfirm --needed
 - name: dunstrc
   template:
-    dest: /home/mrgrim/.config/dunst/dunstrc
+    dest: "{{ home_directory }}/.config/dunst/dunstrc"
     src: dunstrc.j2
