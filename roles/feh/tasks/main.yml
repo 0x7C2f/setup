@@ -3,3 +3,8 @@
     name:
       - feh
     extra_args: --noconfirm --needed
+
+- name: Deploy Wallpaper
+  copy:
+    src: background.jpg
+    dest: "{{home_directory}}/.config"
