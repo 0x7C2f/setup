@@ -34,7 +34,6 @@
         - qt5-quickcontrols
         - qt5-graphicaleffects
         - qt5-multimedia
-        - cronie
         - syncthing
         - firefox
         - alacritty
