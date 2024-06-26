@@ -14,7 +14,8 @@ picom
 vlc
 vscode
 tree
-
+nm-applet
+cava
 
 when: ansible_os_family == 'Windows'
 when: ansible_os_family == 'Android'
