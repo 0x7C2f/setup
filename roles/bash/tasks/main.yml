@@ -6,13 +6,13 @@
 
 - name: aliases
   template:
-    dest: $HOME/.aliases
+    dest: /home/mrgrim/.aliases
     src: aliases.j2
 - name: bash_profile
   template:
-    dest: $HOME/.bash_profile
+    dest: /home/mrgrim/.bash_profile
     src: bash_profile.j2
 - name: bashrc
   template:
-    dest: $HOME/.bashrc
+    dest: /home/mrgrim/.bashrc
     src: bashrc.j2

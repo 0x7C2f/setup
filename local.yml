@@ -5,6 +5,7 @@
   vars:
     HOME: /home/mrgrim
   roles:
+    - bash
     - sddm
     - pacman
     - ansible_user
