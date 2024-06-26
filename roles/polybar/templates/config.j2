@@ -115,30 +115,6 @@ ramp-2 = 󰃟
 ramp-3 = 󰃠
 
 
-[module/spotify]
-type = custom/script
-exec = ~/Scripts/media.sh
-interval = 1
-format = <label>
-label = %output%
-
-
-[settings]
-screenchange-reload = true
-pseudo-transparency = true
-
-[module/mic]
-type = custom/script
-exec = ~/Scripts/mic.sh
-interval = 1  # Update interval in seconds
-format-foreground = ${colors.foreground}
-format = <label>
-label = %output%
-click-left = ~/Scripts/mic.sh 1
-
-
-
-
 [module/pulseaudio]
 type = internal/pulseaudio
 
@@ -226,8 +202,3 @@ content = " "
 type = custom/text
 content = "|"
 content-foreground = ${colors.disabled}
-
-[module/cava]
-type = custom/script
-exec = ~/Scripts/cava.py -f 60 -b 16 -e 490761,78109e,9937bd  -c stereo
-tail = true
