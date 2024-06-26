@@ -5,6 +5,7 @@
   vars:
     HOME: /home/mrgrim
   roles:
+    - bin
     - bash
     - sddm
     - pacman
