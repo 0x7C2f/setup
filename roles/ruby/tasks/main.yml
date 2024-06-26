@@ -3,3 +3,7 @@
     name:
       - ruby
     extra_args: --noconfirm --needed
+- name: Installing Jekyll
+  package:
+    name:
+      - ruby-jekyll-sass-converter
