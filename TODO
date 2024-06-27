@@ -18,11 +18,10 @@ fortune
 ruby
 spicetify-cli
 
-# Installing pihole
-# https://wiki.archlinux.org/title/Pi-hole?useskin=timeless#Failed_to_start_Pi-hole_FTLDNS_engine
-pi-hole-server
-Install lighttpd and php-cgi.
- php-sqlite
+
+
+
+
 
 when: ansible_os_family == 'Windows'
 when: ansible_os_family == 'Android'
