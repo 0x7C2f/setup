@@ -19,6 +19,7 @@ ruby
 spicetify-cli
 nuclear-player-bin
 
+
 /etc/mkinitcpio.conf
 ...
 HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont numlock block encrypt lvm2 filesystems fsck)

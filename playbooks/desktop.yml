@@ -23,7 +23,7 @@
     - ruby
     - python
     - polybar
-    
+    - fortune-mod
   tasks:
     - name: Install Common packages
       community.general.pacman:
