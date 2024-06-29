@@ -17,11 +17,13 @@ cava
 fortune
 ruby
 spicetify-cli
+nuclear-player-bin
 
-
-
-
-
+/etc/mkinitcpio.conf
+...
+HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont numlock block encrypt lvm2 filesystems fsck)
+...
+mkinitcpio-numlock
 
 when: ansible_os_family == 'Windows'
 when: ansible_os_family == 'Android'
