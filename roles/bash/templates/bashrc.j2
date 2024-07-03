@@ -35,12 +35,6 @@ alias checkport='function _portcheck() { lsof -i :$1; }; _portcheck'
   . /usr/share/bash-completion/completions/*
 
 
-# Load pyenv automatically by appending
-# the following to 
-# ~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
-# and ~/.bashrc (for interactive shells) :
-
-
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
