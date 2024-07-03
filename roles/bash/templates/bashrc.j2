@@ -15,6 +15,11 @@ export EDITOR="nano"
 export MONITOR=$(polybar -m|tail -1|sed -e 's/:.*$//g')
 export PYENV_ROOT="$HOME/.pyenv"
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 # Aliases
 alias clone='git clone'
 alias htop='sudo htop'
