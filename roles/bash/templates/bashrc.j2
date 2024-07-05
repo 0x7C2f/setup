@@ -101,7 +101,7 @@ function cd() {
     builtin cd "$@"
     
     # Check if we entered a directory with a virtual environment
-    if [ -f "venv/bin/activate" ]; then
+    if [ -f ".venv/bin/activate" ]; then
         echo "Activating virtual environment..."
         source .venv/bin/activate
     else
