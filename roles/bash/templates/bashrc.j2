@@ -34,6 +34,28 @@ alias grep='grep --color=auto'
 alias follow="tail -f -n +1"
 alias checkport='function _portcheck() { lsof -i :$1; }; _portcheck'
 
+# Function to automatically activate/deactivate venv
+function cd() {
+    builtin cd "$@"
+    
+    # Check if we entered a directory with a virtual environment
+    if [ -f "venv/bin/activate" ]; then
+        echo "Activating virtual environment..."
+        source venv/bin/activate
+    else
+        # Deactivate the current virtual environment if we leave the folder
+        if [ -n "$VIRTUAL_ENV" ]; then
+            echo "Deactivating virtual environment..."
+            deactivate
+        fi
+    fi
+}
+
+# Source the updated .bashrc or .bash_profile
+source ~/.bashrc
+
+
+
 # source files
 [ -r /usr/share/bash-completion/completions ] &&
   . /usr/share/bash-completion/completions/*
@@ -107,23 +129,3 @@ time_stamp () {
 screen_capture () {
      scrot ~/Pictures/Screenshots/%Y-%m-%d-%T-screenshot.jpeg
 }
-
-# Function to automatically activate/deactivate venv
-function cd() {
-    builtin cd "$@"
-    
-    # Check if we entered a directory with a virtual environment
-    if [ -f "venv/bin/activate" ]; then
-        echo "Activating virtual environment..."
-        source venv/bin/activate
-    else
-        # Deactivate the current virtual environment if we leave the folder
-        if [ -n "$VIRTUAL_ENV" ]; then
-            echo "Deactivating virtual environment..."
-            deactivate
-        fi
-    fi
-}
-
-# Source the updated .bashrc or .bash_profile
-source ~/.bashrc
