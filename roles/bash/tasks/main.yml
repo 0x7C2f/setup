@@ -8,10 +8,6 @@
   template:
     dest: "{{ home_directory }}/.aliases"
     src: aliases.j2
-- name: bash_profile
-  template:
-    dest: "{{ home_directory }}/.bash_profile"
-    src: bash_profile.j2
 - name: bashrc
   template:
     dest: "{{ home_directory }}/.bashrc"
