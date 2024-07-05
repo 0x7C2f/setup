@@ -103,7 +103,7 @@ function cd() {
     # Check if we entered a directory with a virtual environment
     if [ -f "venv/bin/activate" ]; then
         echo "Activating virtual environment..."
-        source venv/bin/activate
+        source .venv/bin/activate
     else
         # Deactivate the current virtual environment if we leave the folder
         if [ -n "$VIRTUAL_ENV" ]; then
