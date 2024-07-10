@@ -23,6 +23,7 @@
     - ruby
     - python
     - polybar
+    - vscode
   tasks:
     - name: Install Common packages
       community.general.pacman:

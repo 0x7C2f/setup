@@ -1,0 +1,10 @@
+- yay: 
+    name: visual-studio-code-bin
+    state: present
+
+- name: Setting up VSCode settings file
+  template:
+    dest: "{{ home_directory }}/.config/Code/User/settings.json"
+    src: settings.j2
+    owner: mrgrim
+    group: mrgrim
