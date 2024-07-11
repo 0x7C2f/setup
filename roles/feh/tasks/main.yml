@@ -8,3 +8,5 @@
   copy:
     src: background.jpg
     dest: "{{home_directory}}/.config"
+    owner: mrgrim
+    group: mrgrim

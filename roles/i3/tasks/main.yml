@@ -9,3 +9,5 @@
   template:
     dest: "{{home_directory}}/.config/i3/config"
     src: config.j2
+    owner: mrgrim
+    group: mrgrim

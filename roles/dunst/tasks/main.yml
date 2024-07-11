@@ -7,3 +7,5 @@
   template:
     dest: "{{ home_directory }}/.config/dunst/dunstrc"
     src: dunstrc.j2
+    owner: mrgrim
+    group: mrgrim

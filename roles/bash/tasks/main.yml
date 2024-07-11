@@ -12,3 +12,5 @@
   template:
     dest: "{{ home_directory }}/.bashrc"
     src: bashrc.j2
+    owner: mrgrim
+    group: mrgrim

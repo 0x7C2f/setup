@@ -2,3 +2,5 @@
   template:
     dest: $HOME/.config/picom/picom.conf
     src: picom.j2
+    owner: mrgrim
+    group: mrgrim
