@@ -12,6 +12,11 @@
     owner: mrgrim
     group: mrgrim
 
+- name: Ensure scripts directory exists
+  ansible.builtin.file:
+    path: "{{home_directory}}/.config/i3/scripts/"
+    state: directory
+
 - name: Deploying Keyboard Settings
   template:
     dest: "{{home_directory}}/.config/i3/scripts/keyboard-settings.sh"
