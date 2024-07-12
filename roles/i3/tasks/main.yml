@@ -11,3 +11,11 @@
     src: config.j2
     owner: mrgrim
     group: mrgrim
+
+- name: Deploying Keyboard Settings
+  template:
+    dest: "{{home_directory}}/.config/i3/scripts/keyboard-settings.sh"
+    src: config.j2
+    mode: '755'
+    owner: mrgrim
+    group: mrgrim
