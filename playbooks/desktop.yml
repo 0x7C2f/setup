@@ -58,5 +58,12 @@
         - mpv
         - weechat
         - fortune-mod
-        - ruby 
+        - ruby
+        - ffmpeg
+        - libx264
+        - gst-libav 
+        - gst-plugins-good
+        - gst-plugins-bad 
+        - gst-plugins-ugly
+        - vlc
 

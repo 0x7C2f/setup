@@ -33,7 +33,7 @@ alias burpsuite="java -jar -Xmx2G burploader.jar"
 alias mkdir='mkdir -p'
 alias grep='grep --color=auto'
 alias follow="tail -f -n +1"
-alias checkport='function _portcheck() { lsof -i :$1; }; _portcheck'
+alias checkport='f() { [ -z "$1" ] && echo "Usage: checkport PORTNUMBER" || sudo netstat -antup | grep -i listen | grep ":$1"; }; f'
 
 # source files
 [ -r /usr/share/bash-completion/completions ] &&
