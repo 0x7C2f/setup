@@ -15,8 +15,8 @@ export PS1="\[\033[0;34m\][ \[\033[0;36m\]\H \[\033[1;30m\]\w\[\033[1;30m\] \[\0
 export EDITOR="nano"
 export MONITOR="$(polybar -m | tail -1 | cut -d ':' -f 1)"
 export PYENV_ROOT="$HOME/.pyenv"
-PYTHON_VERSION=$(python3 -c 'import sys; print(sys.version_info[0])')
-export PYTHONPATH="$PYTHONPATH:$HOME/.local/lib/python${PYTHON_VERSION}*/site-packages"
+#PYTHON_VERSION=$(python3 -c 'import sys; print(sys.version_info[0])')
+#export PYTHONPATH="$PYTHONPATH:$HOME/.local/lib/python${PYTHON_VERSION}*/site-packages"
 # Add user bin directory to PATH if it exists
 if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
