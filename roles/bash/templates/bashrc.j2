@@ -1,129 +1,79 @@
+# Display system info and fortune
 neofetch
 echo ------
 fortune
 echo ------
-echo
 
+# Set keyboard repeat rate
 xset r rate 200 40
 
-# Exports
+# Environment exports
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH="$PATH:$GEM_HOME/bin:${HOME}/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:/usr/games/bin:~/.local/bin:/var/lib/snapd/snap/bin:/opt/cuda/bin"
-export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
-export PS1="\[$blue\][ \[$cyan\]\H \[$darkgrey\]\w\[$darkgrey\] \[$blue\]]\\[$darkgrey\]\$ \[$nc\]"
+export PATH="$PATH:$GEM_HOME/bin:${HOME}/bin:/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/games/bin:~/.local/bin:/var/lib/snapd/snap/bin:/opt/cuda/bin"
+export LD_LIBRARY_PATH="/opt/cuda/lib64:$LD_LIBRARY_PATH"
+export PS1="\[\033[0;34m\][ \[\033[0;36m\]\H \[\033[1;30m\]\w\[\033[1;30m\] \[\033[0;34m\]]\\[\033[1;30m\]\$ \[\033[0m\]"
 export EDITOR="nano"
-export MONITOR=$(polybar -m|tail -1|sed -e 's/:.*$//g')
+export MONITOR="$(polybar -m | tail -1 | cut -d ':' -f 1)"
 export PYENV_ROOT="$HOME/.pyenv"
 
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
+# Add user bin directory to PATH if it exists
+if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Aliases
 alias clone='git clone'
 alias htop='sudo htop'
-alias ls="ls --color"
-alias shred="shred -zf"
-alias python="python3"
-alias wget="wget -U 'noleak'"
-alias curl="curl --user-agent 'noleak'"
-alias burpsuite="java -jar -Xmx2G burploader.jar"
+alias ls='ls --color=auto'
+alias shred='shred -zf'
+alias python='python3'
+alias wget='wget -U "noleak"'
+alias curl='curl --user-agent "noleak"'
+alias burpsuite='java -jar -Xmx2G burploader.jar'
 alias mkdir='mkdir -p'
 alias grep='grep --color=auto'
-alias follow="tail -f -n +1"
+alias follow='tail -f -n +1'
 alias checkport='f() { [ -z "$1" ] && echo "Usage: checkport PORTNUMBER" || sudo netstat -antup | grep -i listen | grep ":$1"; }; f'
+alias clearcache='sudo systemd-resolve --flush-caches'
 
-# source files
-[ -r /usr/share/bash-completion/completions ] &&
-  . /usr/share/bash-completion/completions/*
+# Source bash completions
+[ -r /usr/share/bash-completion/completions ] && . /usr/share/bash-completion/completions/*
 
-
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-eval "$(pyenv virtualenv-init -)"
-
-# Run something, muting output or redirecting it to the debug stream
-# depending on the value of _ARC_DEBUG.
-# If ARGCOMPLETE_USE_TEMPFILES is set, use tempfiles for IPC.
-__python_argcomplete_run() {
-    if [[ -z "${ARGCOMPLETE_USE_TEMPFILES-}" ]]; then
-        __python_argcomplete_run_inner "$@"
-        return
-    fi
-    local tmpfile="$(mktemp)"
-    _ARGCOMPLETE_STDOUT_FILENAME="$tmpfile" __python_argcomplete_run_inner "$@"
-    local code=$?
-    cat "$tmpfile"
-    rm "$tmpfile"
-    return $code
-}
-
-__python_argcomplete_run_inner() {
-    if [[ -z "${_ARC_DEBUG-}" ]]; then
-        "$@" 8>&1 9>&2 1>/dev/null 2>&1
-    else
-        "$@" 8>&1 9>&2 1>&9 2>&1
-    fi
-}
-
-_python_argcomplete() {
-    local IFS=$'\013'
-    local SUPPRESS_SPACE=0
-    if compopt +o nospace 2> /dev/null; then
-        SUPPRESS_SPACE=1
-    fi
-    COMPREPLY=( $(IFS="$IFS" \
-                  COMP_LINE="$COMP_LINE" \
-                  COMP_POINT="$COMP_POINT" \
-                  COMP_TYPE="$COMP_TYPE" \
-                  _ARGCOMPLETE_COMP_WORDBREAKS="$COMP_WORDBREAKS" \
-                  _ARGCOMPLETE=1 \
-                  _ARGCOMPLETE_SUPPRESS_SPACE=$SUPPRESS_SPACE \
-                  __python_argcomplete_run "$1") )
-    if [[ $? != 0 ]]; then
-        unset COMPREPLY
-    elif [[ $SUPPRESS_SPACE == 1 ]] && [[ "${COMPREPLY-}" =~ [=/:]$ ]]; then
-        compopt -o nospace
-    fi
-}
-complete -o nospace -o default -o bashdefault -F _python_argcomplete cz
-
-# Red name for root
-if [ "${UID}" -eq "0" ]; then 
-  nameC="${txtred}" 
+# Pyenv initialization
+if [[ -d $PYENV_ROOT/bin ]]; then
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init --path)"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 fi
 
+# Color prompt for root user
+if [ "${UID}" -eq "0" ]; then
+    PS1="\[\033[0;31m\][ \[\033[0;36m\]\H \[\033[1;30m\]\w\[\033[1;30m\] \[\033[0;31m\]]\\[\033[1;30m\]\$ \[\033[0m\]"
+fi
 
-# Function to automatically activate/deactivate venv
+# Function to activate/deactivate virtual environment
 function cd() {
     builtin cd "$@"
-    
-    # Check if we entered a directory with a virtual environment
     if [ -f ".venv/bin/activate" ]; then
         echo "Activating virtual environment..."
         source .venv/bin/activate
-    else
-        # Deactivate the current virtual environment if we leave the folder
-        if [ -n "$VIRTUAL_ENV" ]; then
-            echo "Deactivating virtual environment..."
-            deactivate
-        fi
+    elif [ -n "$VIRTUAL_ENV" ]; then
+        echo "Deactivating virtual environment..."
+        deactivate
     fi
 }
 
-# Local settings go last
-if [ -f ~/.localrc ]; then 
-  source ~/.localrc
+# Source local settings
+if [ -f ~/.localrc ]; then
+    source ~/.localrc
 fi
 
-time_stamp () {
-     echo $(date "+%F-%H-%M-%S")
+# Custom functions
+time_stamp() {
+    echo $(date "+%F-%H-%M-%S")
 }
 
-screen_capture () {
-     scrot ~/Pictures/Screenshots/%Y-%m-%d-%T-screenshot.jpeg
+screen_capture() {
+    scrot ~/Pictures/Screenshots/%Y-%m-%d-%T-screenshot.jpeg
 }
-

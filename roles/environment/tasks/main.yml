@@ -1,0 +1,6 @@
+- name: Deploy environment configuration
+  template:
+    dest: "/etc/environment"
+    src: environment.j2
+    owner: root
+    group: root
