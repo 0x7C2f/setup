@@ -53,20 +53,20 @@ if [ "${UID}" -eq "0" ]; then
     PS1="\[\033[0;31m\][ \[\033[0;36m\]\H \[\033[1;30m\]\w\[\033[1;30m\] \[\033[0;31m\]]\\[\033[1;30m\]\$ \[\033[0m\]"
 fi
 
-# Activate or Deactive Virtual Environments
-function cd() {
-    builtin cd "$@"
-    if [ -f ".venv/bin/activate" ]; then
-        echo "Activating virtual environment (venv)..."
-        source .venv/bin/activate
-    elif [ -n "$VIRTUAL_ENV" ]; then
-        echo "Deactivating virtual environment..."
-        deactivate
-    elif [ -f "conda.sh" ]; then
-        echo "Activating virtual environment (conda)..."
-        source conda.sh activate
-    fi
-}
+# # Activate or Deactive Virtual Environments
+# function cd() {
+#     builtin cd "$@"
+#     if [ -f ".venv/bin/activate" ]; then
+#         echo "Activating virtual environment (venv)..."
+#         source .venv/bin/activate
+#     elif [ -n "$VIRTUAL_ENV" ]; then
+#         echo "Deactivating virtual environment..."
+#         deactivate
+#     elif [ -f "conda.sh" ]; then
+#         echo "Activating virtual environment (conda)..."
+#         source conda.sh activate
+#     fi
+# }
 
 
 # Source local settings
