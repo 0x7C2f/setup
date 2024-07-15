@@ -53,11 +53,6 @@ if [ "${UID}" -eq "0" ]; then
     PS1="\[\033[0;31m\][ \[\033[0;36m\]\H \[\033[1;30m\]\w\[\033[1;30m\] \[\033[0;31m\]]\\[\033[1;30m\]\$ \[\033[0m\]"
 fi
 
-# Source local settings
-if [ -f ~/.localrc ]; then
-    source ~/.localrc
-fi
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/mrgrim/miniconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
