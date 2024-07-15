@@ -53,17 +53,21 @@ if [ "${UID}" -eq "0" ]; then
     PS1="\[\033[0;31m\][ \[\033[0;36m\]\H \[\033[1;30m\]\w\[\033[1;30m\] \[\033[0;31m\]]\\[\033[1;30m\]\$ \[\033[0m\]"
 fi
 
-# Function to activate/deactivate virtual environment
+# Activate or Deactive Virtual Environments
 function cd() {
     builtin cd "$@"
     if [ -f ".venv/bin/activate" ]; then
-        echo "Activating virtual environment..."
+        echo "Activating virtual environment (venv)..."
         source .venv/bin/activate
     elif [ -n "$VIRTUAL_ENV" ]; then
         echo "Deactivating virtual environment..."
         deactivate
+    elif [ -f "conda.sh" ]; then
+        echo "Activating virtual environment (conda)..."
+        source conda.sh activate
     fi
 }
+
 
 # Source local settings
 if [ -f ~/.localrc ]; then
@@ -78,3 +82,18 @@ time_stamp() {
 screen_capture() {
     scrot ~/Pictures/Screenshots/%Y-%m-%d-%T-screenshot.jpeg
 }
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/mrgrim/miniconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/mrgrim/miniconda/etc/profile.d/conda.sh" ]; then
+        . "/home/mrgrim/miniconda/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/mrgrim/miniconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
