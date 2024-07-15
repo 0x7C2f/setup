@@ -67,7 +67,29 @@ fi
 #         source conda.sh activate
 #     fi
 # }
+# Define a function to activate Conda environment based on directory name
 
+# Function to activate Conda environment based on directory name
+activate_conda_env() {
+    local folder_name="$(basename "$(pwd)")"  # Get the current directory name
+
+    # Check if the directory seems to be a Conda environment
+    if [[ -e "$folder_name/environment.yml" ]]; then
+        echo "Detected potential Conda environment: $folder_name"
+        # Check if the Conda environment exists
+        if conda env list | grep -q "\b${folder_name}\b"; then
+            echo "Activating Conda environment: ${folder_name}"
+            # Activate the Conda environment
+            conda activate "${folder_name}"
+        fi
+    fi
+}
+
+# Hook into cd command to activate Conda environment if present
+cd() {
+    builtin cd "$@"  # Call the built-in cd command
+    activate_conda_env  # Activate Conda environment after changing directory
+}
 
 # Source local settings
 if [ -f ~/.localrc ]; then
