@@ -6,5 +6,6 @@
   template:
     dest: "{{ home_directory }}/.config/Code/User/settings.json"
     src: settings.j2
+    mode: '0755'
     owner: mrgrim
     group: mrgrim
