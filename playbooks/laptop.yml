@@ -2,3 +2,10 @@
 - hosts: all
   connection: local
   become: true
+  tasks:
+    - name: Set laptop-specific fact
+      set_fact:
+        is_laptop: true
+  roles:
+    - bash
+    - git

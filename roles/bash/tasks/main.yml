@@ -1,12 +1,8 @@
-- name: Setting Up Bash
-  package:
-    name:
-      - bash-completion
-    extra_args: --noconfirm --needed
-    
-- name: bashrc
+- name: Configuring bashrc
   template:
     dest: "{{ home_directory }}/.bashrc"
     src: bashrc.j2
-    owner: mrgrim
-    group: mrgrim
+    mode: '0755'
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    

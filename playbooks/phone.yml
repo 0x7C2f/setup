@@ -1,4 +1,15 @@
 ---
 - hosts: all
   connection: local
-  become: true
+  vars:
+    ansible_user: u0_a407
+    home_directory: /data/data/com.termux/files/home
+  roles:
+    - bash
+    - git
+    - termux
+  tasks:
+    - name: Set phone-specific fact
+      set_fact:
+        is_phone: true
+    

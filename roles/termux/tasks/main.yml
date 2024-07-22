@@ -1,0 +1,13 @@
+- name: Create Termux config directory
+  file:
+    path: "{{ home_directory }}/.termux"
+    state: directory
+    mode: '0755'
+    
+- name: Configuring global ignore
+  template:
+    dest: "{{ home_directory }}/.termux/termux.properties"
+    src: termux.properties.j2
+    mode: '0755'
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
