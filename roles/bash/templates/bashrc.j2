@@ -37,6 +37,7 @@ alias grep='grep --color=auto'
 alias follow='tail -f -n +1'
 alias checkport='f() { [ -z "$1" ] && echo "Usage: checkport PORTNUMBER" || sudo netstat -antup | grep -i listen | grep ":$1"; }; f'
 alias clearcache='sudo systemd-resolve --flush-caches'
+alias ssh="TERM=xterm-256color $(which ssh)"
 
 # Source bash completions
 [ -r /usr/share/bash-completion/completions ] && . /usr/share/bash-completion/completions/*
