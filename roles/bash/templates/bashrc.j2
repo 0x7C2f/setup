@@ -72,3 +72,20 @@ alias ap='ansible-pull -o -U https://github.com/0x7C2f/setup/'
 if [ "${UID}" -eq "0" ]; then
     PS1="\[\033[0;31m\][ \[\033[0;36m\]\H \[\033[1;30m\]\w\[\033[1;30m\] \[\033[0;31m\]]\\[\033[1;30m\]\$ \[\033[0m\]"
 fi
+
+# Function to automatically activate/deactivate venv
+function cd() {
+    builtin cd "$@"
+    
+    # Check if we entered a directory with a virtual environment
+    if [ -f ".venv/bin/activate" ]; then
+        echo "Activating virtual environment..."
+        source venv/bin/activate
+    else
+        # Deactivate the current virtual environment if we leave the folder
+        if [ -n "$VIRTUAL_ENV" ]; then
+            echo "Deactivating virtual environment..."
+            deactivate
+        fi
+    fi
+}
