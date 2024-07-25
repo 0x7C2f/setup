@@ -25,9 +25,6 @@ HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont nu
 ...
 mkinitcpio-numlock
 
-when: ansible_os_family == 'Windows'
-when: ansible_os_family == 'Android'
-when: ansible_os_family == 'Archlinux'
 #- name: check updates
 #  pacman: 
 #    update_cache: yes
