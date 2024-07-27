@@ -21,7 +21,7 @@ ruby
 spicetify-cli
 nuclear-player-bin
 localepurge 
-
+aur/google-chrome
 /etc/mkinitcpio.conf
 ...
 HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont numlock block encrypt lvm2 filesystems fsck)
