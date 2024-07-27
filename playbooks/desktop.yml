@@ -11,6 +11,7 @@
     - bin
     - bash
     - git
+    - yay
     - sddm
     - pacman
     - ansible_user
@@ -27,8 +28,8 @@
     - polybar
     - vscode
     - vesktop
-    - yay
     - chrome
+    - neofetch
   tasks:
     - name: Set desktop-specific fact
       set_fact:

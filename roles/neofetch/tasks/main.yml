@@ -1,4 +1,4 @@
-- yay: 
+- name: Install neofetch
+  pacman:
     name: neofetch
     state: present
-    become: yes
