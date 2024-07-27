@@ -1,6 +1,12 @@
+- name: Install Rofi
+  pacman:
+    name: rofi
+    state: present
+  become: yes
+
 - name: Rofi config
   template:
-    dest: $HOME/.config/rofi/config.rasi
+    dest: "{{ home_directory }}/.config/rofi/config.rasi"
     src: config.j2
     owner: mrgrim
     group: mrgrim
