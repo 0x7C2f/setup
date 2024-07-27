@@ -18,6 +18,7 @@
     - systemd
     - cron
     - i3
+    - rofi
     - dunst
     - alacritty
     - feh
