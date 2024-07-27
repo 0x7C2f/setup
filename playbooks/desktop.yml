@@ -71,3 +71,4 @@
         - gst-plugins-ugly
         - vlc
         - bash-completion
+        - ksnip
