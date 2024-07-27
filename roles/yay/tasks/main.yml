@@ -1,0 +1,26 @@
+---
+- name: Install necessary packages
+  pacman:
+    name:
+      - base-devel
+    state: present
+
+- name: Clone yay repository
+  git:
+    repo: https://aur.archlinux.org/yay.git
+    dest: /tmp/yay
+    version: master
+    force: yes
+
+- name: Build and install yay
+  command: |
+    cd /tmp/yay
+    makepkg -si --noconfirm
+  args:
+    chdir: /tmp/yay
+    creates: /usr/bin/yay
+
+- name: Clean up yay repository
+  file:
+    path: /tmp/yay
+    state: absent

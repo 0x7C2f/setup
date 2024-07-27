@@ -27,6 +27,7 @@
     - polybar
     - vscode
     - vesktop
+    - yay
   tasks:
     - name: Set desktop-specific fact
       set_fact:
