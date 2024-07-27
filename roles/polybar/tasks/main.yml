@@ -9,6 +9,8 @@
   file:
     path: "{{ home_directory }}/.config/polybar"
     state: directory
+    owner: mrgrim
+    group: mrgrim
     mode: '0755'
 
 - name: Deploy polybar configuration
