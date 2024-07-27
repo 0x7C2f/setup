@@ -33,3 +33,30 @@ mkinitcpio-numlock
 #    update_cache: yes
 #    upgrade: yes
 #  when: ansible_os_family == 'Archlinux'
+
+
+
+Method 2: Manually Edit Desktop Configuration
+
+If you prefer to manually edit configuration files, you can follow these steps:
+
+    Open a Terminal.
+
+    Create or edit the ~/.config/mimeapps.list file:
+
+    bash
+
+nano ~/.config/mimeapps.list
+
+Add or modify the following lines to set Firefox as the default for web-related MIME types:
+
+ini
+
+[Default Applications]
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/ftp=firefox.desktop
+
+Save the file and exit the editor (Ctrl+X, then Y, and Enter to save in nano).
+
+Optionally, if firefox.desktop is not found in your system, you might need to create or locate the appropriate .desktop file. Typically, it’s located in /usr/share/applications/ or ~/.local/share/applications/.

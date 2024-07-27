@@ -1,0 +1,5 @@
+- name: Install Nano
+  pacman:
+    name: nano
+    state: present
+  become: yes
