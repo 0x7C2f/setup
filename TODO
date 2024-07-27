@@ -2,9 +2,8 @@ https://github.com/3ximus/aerial-sddm-theme
 
 xorg-xinit
 xterm
-fluxbox
 i3-status
-
+autotiling
 cowsay
 thefuck
 vencord
