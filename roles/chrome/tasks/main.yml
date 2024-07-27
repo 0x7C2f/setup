@@ -1,0 +1,3 @@
+- yay: 
+    name: google-chrome
+    state: present

@@ -28,6 +28,7 @@
     - vscode
     - vesktop
     - yay
+    - chrome
   tasks:
     - name: Set desktop-specific fact
       set_fact:

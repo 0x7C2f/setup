@@ -1,0 +1,4 @@
+- yay: 
+    name: neofetch
+    state: present
+    become: yes

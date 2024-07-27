@@ -3,15 +3,11 @@ https://github.com/3ximus/aerial-sddm-theme
 xorg-xinit
 xterm
 i3-status
-autotiling
-cowsay
 thefuck
 betterlockscreen
-neofetch
 nextdns
 picom
 vlc
-vscode
 tree
 nm-applet
 cava
@@ -19,8 +15,7 @@ fortune
 ruby
 spicetify-cli
 nuclear-player-bin
-localepurge 
-aur/google-chrome
+localepurge
 /etc/mkinitcpio.conf
 ...
 HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont numlock block encrypt lvm2 filesystems fsck)
@@ -68,3 +63,7 @@ xdg-settings set default-web-browser firefox.desktop
 # Fonts
 sudo pacman -S $(pacman -Ssq noto-fonts)
 fc-cache --really-force
+
+
+# Yay
+Yay root perms

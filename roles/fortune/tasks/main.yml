@@ -1,0 +1,3 @@
+- yay: 
+    name: fortune
+    state: present
