@@ -60,3 +60,8 @@ x-scheme-handler/ftp=firefox.desktop
 Save the file and exit the editor (Ctrl+X, then Y, and Enter to save in nano).
 
 Optionally, if firefox.desktop is not found in your system, you might need to create or locate the appropriate .desktop file. Typically, it’s located in /usr/share/applications/ or ~/.local/share/applications/.
+
+
+
+
+xdg-settings set default-web-browser firefox.desktop
