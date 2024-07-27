@@ -1,56 +1,36 @@
-[colors.bright]
-black = "0x000000"
-blue = "0x7daea3"
-cyan = "0x89b482"
-green = "0x28a745"
-magenta = "0xd3869b"
-red = "0xea6962"
-white = "0xdfbf8e"
-yellow = "0xe3a84e"
+# github Alacritty Colors
 
-[colors.normal]
-black = "0x000000"
-blue = "0x7daea3"
-cyan = "0x89b482"
-green = "0x28a745"
-magenta = "0xd3869b"
-red = "0xea6962"
-white = "0xdfbf8e"
-yellow = "0xe78a4e"
-
+# Default colors
 [colors.primary]
-background = "0x000000"
-foreground = "0xdfbf8e"
+background = '#0d1117'
+foreground = '#b3b1ad'
 
-[env]
-WINIT_X11_SCALE_FACTOR = "1"
+# Normal colors
+[colors.normal]
+black   = '#484f58'
+red     = '#ff7b72'
+green   = '#3fb950'
+yellow  = '#d29922'
+blue    = '#58a6ff'
+magenta = '#bc8cff'
+cyan    = '#39c5cf'
+white   = '#b1bac4'
 
-[font.bold]
-family = "Fira Code Nerd Font"
-style = "Bold"
+# Bright colors
+[colors.bright]
+black   = '#6e7681'
+red     = '#ffa198'
+green   = '#56d364'
+yellow  = '#e3b341'
+blue    = '#79c0ff'
+magenta = '#d2a8ff'
+cyan    = '#56d4dd'
+white   = '#f0f6fc'
 
-[font.bold_italic]
-family = "Fira Code Nerd Font"
-style = "Bold Italic"
+[[colors.indexed_colors]]
+index = 16
+color = '#d18616'
 
-[font.italic]
-family = "Fira Code Nerd Font"
-style = "Italic"
-
-[font.normal]
-family = "Fira Code Nerd Font"
-style = "Regular"
-
-[shell]
-program = "bash"
-
-[window]
-opacity = 0.9
-
-[window.dimensions]
-columns = 100
-lines = 35
-
-[window.padding]
-x = 5
-y = 5
+[[colors.indexed_colors]]
+index = 17
+color = '#ffa198'
