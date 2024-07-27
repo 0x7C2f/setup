@@ -68,3 +68,4 @@ xdg-settings set default-web-browser firefox.desktop
 
 # Fonts
 sudo pacman -S $(pacman -Ssq noto-fonts)
+fc-cache --really-force
