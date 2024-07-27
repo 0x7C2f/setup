@@ -1,7 +1,7 @@
 https://github.com/3ximus/aerial-sddm-theme
 
 xorg-xinit
-
+sudo pacman -S xterm fluxbox
 
 cowsay
 thefuck
