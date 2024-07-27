@@ -26,6 +26,7 @@
     - python
     - polybar
     - vscode
+    - vesktop
   tasks:
     - name: Set desktop-specific fact
       set_fact:

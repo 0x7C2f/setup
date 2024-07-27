@@ -1,0 +1,13 @@
+- name: Create vencord themes directory
+  file:
+    path: "{{ home_directory }}/.config/vesktop/themes"
+    state: directory
+    owner: mrgrim
+    group: mrgrim
+    mode: '0755'
+- name: Deploy Theme
+  template:
+    dest: "{{ home_directory }}/.config/vesktop/themes/gruvbox.css"
+    src: config.j2
+    owner: mrgrim
+    group: mrgrim
