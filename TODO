@@ -70,7 +70,7 @@ Yay root perms
 
 
 # Install and configure audio (pipewire)
-sudo pacman -S pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber
+sudo pacman -Rns pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber
 
 systemctl --user enable pipewire
 systemctl --user start pipewire
