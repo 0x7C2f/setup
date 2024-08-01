@@ -1,11 +1,28 @@
-[user]
-  name = 0x7C2f
-  email = 0x7C2f@grimdevelopment.com
-[core]
+[user]                                           name = 0x7C2f
+  email = 0x7C2f@grimdevelopment.com           [core]
   editor = nano
   excludesfile = $HOME/.globalignore
-[safe]
+  autocrlf = input
+  preloadindex = true
+  fscache = true
+  [safe]
   directory = /storage/emulated/0/
   directory = /storage/emulated/0/Documents/Notebook
 [alias]
-push = push --force
+  push = push --force
+  st = status
+  co = checkout
+  br = branch
+  ci = commit
+  lg = log --oneline --graph --all
+[color]                                   ui = auto
+[help]                                    autocorrect = 1
+[pull]                                rebase = true
+[credential]                        
+  helper = cache       
+[pack]
+  deltaCacheSize = 2047m
+  packSizeLimit = 2g
+  windowMemory = 2047m
+[http]                            
+  sslVerify = true
