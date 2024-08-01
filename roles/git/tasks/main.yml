@@ -2,14 +2,14 @@
   template:
     dest: "{{ home_directory }}/.globalignore"
     src: globalignore.j2
-    mode: '0755'
+    mode: "0755"
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
-    
+
 - name: Configuring git config
   template:
     dest: "{{ home_directory }}/.gitconfig"
     src: gitconfig.j2
-    mode: '0755'
+    mode: "0755"
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
