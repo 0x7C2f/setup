@@ -1,1 +1,1 @@
-# configuration
+# PC Configuration
